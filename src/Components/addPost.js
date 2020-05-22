@@ -1,17 +1,21 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import axios from "axios";
 import { Button, Alert } from "react-bootstrap";
 import Modal from "../HOC/modal";
-import SwitchLabels from './switch'
+import { SwitchLabels } from "../Widgets/API_components/switch";
 import { modifyContext } from "./post";
+import FormComment from "./formComment";
+
 const AddPost = (props) => {
-  //const titleRef = React.createRef();
-  const commentRef = React.createRef();
+
+  const titleRef = React.createRef();
+  const switchRef = useRef();
+  console.log('res', switchRef)
   const { handleRefresh, modifyId } = props;
   const [title, setTitle] = useState();
   const [author, setAuthor] = useState();
-  const [comment, setComment] = useState();
   const [modify, setModify] = useContext(modifyContext);
+  const [showComment, setShowComment]=useState(false);
   useEffect(() => {
     if (modifyId !== undefined) {
       axios.get(`http://localhost:4000/posts/${modifyId}`).then((res) => {
@@ -49,7 +53,11 @@ const AddPost = (props) => {
           });
       } else {
         axios.post(`http://localhost:4000/posts`, postToSubmit).then((res) => {
-          console.log("res 2", res, commentRef.current.value, res.data.id);
+          console.log(
+            "res 2",
+            res,
+            res.data.id,
+          );
         });
       }
       //handleRefresh();
@@ -77,7 +85,7 @@ const AddPost = (props) => {
       <div>
         <label>Title :</label>
         <input
-          //ref={titleRef}
+        ref={titleRef}
           name="title"
           type="text"
           value={title}
@@ -99,19 +107,9 @@ const AddPost = (props) => {
         />
         {requiredFields({ author }, false)}
       </div>
-      <SwitchLabels />
-      <div>
-        <label>Comment :</label>
-        <textarea
-          ref={commentRef}
-          name="comment"
-          type="text"
-          value={comment}
-          onChange={(event) => {
-            handleChange(event, setComment);
-          }}
-        />
-      </div>
+      <SwitchLabels ref={switchRef} setShowComment={setShowComment} />
+      {showComment && <FormComment />
+      }
       <Button type="submit">Validate</Button>
     </form>
   );
