@@ -18,7 +18,7 @@ class Posts extends React.Component {
           element: "input",
           value: "",
           label: true,
-          labelText: "Commentaire...",
+          labelText: "Comment",
           config: {
             name: "comment_input",
             type: "text",
@@ -55,9 +55,9 @@ class Posts extends React.Component {
           config: {
             name: "country_select",
             options: [
-              { val: "Maroc", text: "Maroc" },
+              { val: "Morocco", text: "Morocco" },
               { val: "France", text: "France" },
-              { val: "GrandeBretagne", text: "GrandeBretagne" },
+              { val: "England", text: "England" },
             ],
           },
           validation: {

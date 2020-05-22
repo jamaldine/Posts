@@ -33,7 +33,7 @@ const FormComment = (props) => {
         onblur={(newState) => updateForm(newState)}
         change={(newState) => updateForm(newState)}
       />
-      <Button type="submit">Valider</Button>
+      <Button type="submit">Validate</Button>
     </form>
   );
 };

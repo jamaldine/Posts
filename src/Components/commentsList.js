@@ -54,9 +54,9 @@ export default function CommentsList(props) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Auteur</TableCell>
-            <TableCell align="right">Titre</TableCell>
-            <TableCell align="right">Commentaire</TableCell>
+            <TableCell>Author</TableCell>
+            <TableCell align="right">Title</TableCell>
+            <TableCell align="right">Comment</TableCell>
             <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>
           </TableRow>
