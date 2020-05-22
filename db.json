@@ -1,0 +1,85 @@
+{
+  "posts": [
+    {
+      "title": "javascript !!!!!!!vvvv",
+      "author": "jamaldine boukir.....",
+      "visible": true,
+      "id": 3
+    },
+    {
+      "title": "sami and sara",
+      "author": "adiba",
+      "visible": false,
+      "id": 4
+    },
+    {
+      "title": "Single Page Applicatipon",
+      "author": "author 2",
+      "visible": true,
+      "id": 5
+    },
+    {
+      "title": "title x",
+      "author": "jamaldine boukir",
+      "visible": true,
+      "id": 6
+    },
+    {
+      "title": "Single Page Applicatipon",
+      "author": "author 2",
+      "visible": true,
+      "id": 7
+    },
+    {
+      "title": "Single Page Applicatipon",
+      "author": "jamaldine boukir",
+      "visible": true,
+      "id": 8
+    },
+    {
+      "title": "title3",
+      "author": "author 2ddd",
+      "visible": true,
+      "id": 9
+    },
+    {
+      "title": "title3",
+      "author": "author 2ddd",
+      "visible": true,
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "body": "my comment",
+      "description": "",
+      "country": "",
+      "postId": 3,
+      "id": 3
+    },
+    {
+      "body": "first commit",
+      "description": "",
+      "country": "",
+      "postId": 3,
+      "id": 4
+    },
+    {
+      "body": "first",
+      "description": "wth",
+      "country": "France",
+      "postId": 3,
+      "id": 5
+    },
+    {
+      "body": "fffggggg",
+      "description": "",
+      "country": "",
+      "postId": 3,
+      "id": 6
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
