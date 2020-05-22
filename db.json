@@ -9,7 +9,7 @@
     {
       "title": "sami and sara",
       "author": "adiba",
-      "visible": false,
+      "visible": true,
       "id": 4
     },
     {
@@ -47,20 +47,56 @@
       "author": "author 2ddd",
       "visible": true,
       "id": 10
+    },
+    {
+      "title": "si exist",
+      "author": "oui à la",
+      "visible": true,
+      "id": 11
+    },
+    {
+      "title": "test pour les commentaires",
+      "author": "COMMENTAIRES",
+      "visible": true,
+      "id": 12
+    },
+    {
+      "title": "also c",
+      "author": "COMMENTAIRES",
+      "visible": true,
+      "id": 13
+    },
+    {
+      "title": "recuperate id",
+      "author": "COMMENTAIRES",
+      "visible": true,
+      "id": 14
+    },
+    {
+      "title": "recuperation",
+      "author": "COMMENTAIRES",
+      "visible": true,
+      "id": 15
+    },
+    {
+      "title": "res id",
+      "author": "COMMENTAIRES",
+      "visible": true,
+      "id": 16
     }
   ],
   "comments": [
     {
       "body": "my comment",
       "description": "",
-      "country": "",
+      "country": "Morocco",
       "postId": 3,
       "id": 3
     },
     {
       "body": "first commit",
       "description": "",
-      "country": "",
+      "country": "Morocco",
       "postId": 3,
       "id": 4
     },
@@ -74,7 +110,7 @@
     {
       "body": "fffggggg",
       "description": "",
-      "country": "",
+      "country": "England",
       "postId": 3,
       "id": 6
     }

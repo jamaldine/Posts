@@ -35,7 +35,7 @@ const Post = (props) => {
         component="span"
         onClick={handleClickPost}
       >
-        ajouter post
+        add post
       </Button>
       {anchorElPost ? (
         <modifyContext.Provider value={[modify, setModify]}>

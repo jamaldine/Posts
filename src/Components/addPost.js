@@ -2,10 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Button, Alert } from "react-bootstrap";
 import Modal from "../HOC/modal";
-
+import SwitchLabels from './switch'
 import { modifyContext } from "./post";
 const AddPost = (props) => {
-  const titleRef = React.createRef();
+  //const titleRef = React.createRef();
+  const commentRef = React.createRef();
   const { handleRefresh, modifyId } = props;
   const [title, setTitle] = useState();
   const [author, setAuthor] = useState();
@@ -43,13 +44,15 @@ const AddPost = (props) => {
       if (modify.id) {
         axios
           .put(`http://localhost:4000/posts/${modify.id}`, postToSubmit)
-          .then((res) => {});
+          .then((res) => {
+            console.log("res 1", res);
+          });
       } else {
-        axios
-          .post(`http://localhost:4000/posts`, postToSubmit)
-          .then((res) => {});
+        axios.post(`http://localhost:4000/posts`, postToSubmit).then((res) => {
+          console.log("res 2", res, commentRef.current.value, res.data.id);
+        });
       }
-      handleRefresh();
+      //handleRefresh();
     }
     event.preventDefault();
   };
@@ -72,9 +75,9 @@ const AddPost = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Titre :</label>
+        <label>Title :</label>
         <input
-          ref={titleRef}
+          //ref={titleRef}
           name="title"
           type="text"
           value={title}
@@ -85,7 +88,7 @@ const AddPost = (props) => {
         {requiredFields({ title }, true)}
       </div>
       <div>
-        <label>Auteur :</label>
+        <label>Author :</label>
         <input
           name="author"
           type="text"
@@ -96,9 +99,11 @@ const AddPost = (props) => {
         />
         {requiredFields({ author }, false)}
       </div>
+      <SwitchLabels />
       <div>
-        <label>Commentaire :</label>
+        <label>Comment :</label>
         <textarea
+          ref={commentRef}
           name="comment"
           type="text"
           value={comment}
@@ -107,7 +112,7 @@ const AddPost = (props) => {
           }}
         />
       </div>
-      <Button type="submit">Valider</Button>
+      <Button type="submit">Validate</Button>
     </form>
   );
 };
