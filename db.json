@@ -1,8 +1,8 @@
 {
   "posts": [
     {
-      "title": "javascript !!!!!!!vvvv",
-      "author": "jamaldine boukir.....",
+      "title": "javascript",
+      "author": "jamaldine boukir",
       "visible": true,
       "id": 3
     },
@@ -215,6 +215,18 @@
       "author": "author 2",
       "visible": true,
       "id": 38
+    },
+    {
+      "title": "Single Page Applicatipon",
+      "author": "author 2",
+      "visible": true,
+      "id": 39
+    },
+    {
+      "title": "HELLO",
+      "author": "HELLO",
+      "visible": true,
+      "id": 40
     }
   ],
   "comments": [
@@ -245,6 +257,13 @@
       "country": "England",
       "postId": 3,
       "id": 6
+    },
+    {
+      "body": "REACT AND VANILLA",
+      "description": "FULLSTACK JS",
+      "country": "England",
+      "postId": 3,
+      "id": 7
     }
   ],
   "profile": {
