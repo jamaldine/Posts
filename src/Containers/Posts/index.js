@@ -1,5 +1,7 @@
 import React from "react";
-import axios from "axios";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { postsListAll, commentsListAll } from "../../actions";
 import Post from "../../Components/post";
 class Posts extends React.Component {
   constructor(props) {
@@ -11,8 +13,8 @@ class Posts extends React.Component {
       anchorElComment: null,
       posts: [],
       commentsList: [],
-      postId:null,
-      modifyId:null,
+      postId: null,
+      modifyId: null,
       formData: {
         body: {
           element: "input",
@@ -71,21 +73,14 @@ class Posts extends React.Component {
   }
 
   componentDidMount() {
-
-    axios.get(`http://localhost:4000/posts`).then((res) => {
-      let posts = res.data;
-      this.setState({ posts });
-    });
-    axios.get(`http://localhost:4000/comments`).then((res) => {
-      let commentsList = res.data;
-      this.setState({ commentsList });
-    });
+    this.props.postsListAll();
+    this.props.commentsListAll();
   }
 
   handleClickPost = (event, id) => {
     this.setState({
       anchorElPost: event.currentTarget,
-      modifyId:id,
+      modifyId: id,
     });
   };
 
@@ -98,7 +93,7 @@ class Posts extends React.Component {
   handleClickComment = (event, id) => {
     this.setState({
       anchorElComment: event.currentTarget,
-      postId:id
+      postId: id,
     });
   };
 
@@ -136,8 +131,8 @@ class Posts extends React.Component {
         handleClosePost={this.handleClosePost}
         handleClickComment={this.handleClickComment}
         handleCloseComment={this.handleCloseComment}
-        commentsList={this.state.commentsList}
-        posts={this.state.posts}
+        commentsList={this.props.comments.commentsList}
+        posts={this.props.posts.postsList}
         formData={this.state.formData}
         updateForm={this.updateForm}
         handleRefresh={this.handleRefresh}
@@ -147,5 +142,14 @@ class Posts extends React.Component {
     );
   }
 }
+function mapStateToProps(state) {
+  return {
+    posts: state.posts,
+    comments: state.comments,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ postsListAll, commentsListAll }, dispatch);
+}
 
-export default Posts;
+export default connect(mapStateToProps, mapDispatchToProps)(Posts);
