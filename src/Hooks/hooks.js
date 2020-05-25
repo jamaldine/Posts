@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-export function useFetch(id) {
+export function useFetch(id, getPost) {
   const [response, setResponse] = useState();
 
   useEffect(() => {
     if (id !== undefined) {
-      axios.get(`http://localhost:4000/posts/${id}`).then((result) => {
-        setResponse(result.data);
-      });
+      getPost(id);
     }
-  }, [id]);
+  }, [id, getPost]);
 
   return { response };
 }

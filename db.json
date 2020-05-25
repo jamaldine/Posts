@@ -1,19 +1,19 @@
 {
   "posts": [
     {
-      "title": "javascript ?",
+      "title": "javascript and react",
       "author": "jamaldine boukir",
       "visible": true,
       "id": 3
     },
     {
       "title": "sami and sara",
-      "author": "adiba",
+      "author": "adiba....",
       "visible": true,
       "id": 4
     },
     {
-      "title": "khadija",
+      "title": "khadija boukir",
       "author": "js forever",
       "visible": true,
       "id": 5
@@ -33,6 +33,13 @@
       "country": "Morocco",
       "postId": 3,
       "id": 4
+    },
+    {
+      "body": "my comment",
+      "description": "bbbbbbbbbbbb",
+      "country": "",
+      "postId": 3,
+      "id": 5
     }
   ],
   "profile": {

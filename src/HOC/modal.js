@@ -3,7 +3,15 @@ import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 
 export default function Modal(WrappedComponent) {
-  return ({ handleClosePost, anchorElPost, modifyId, addPost, modifyPost }) => {
+  return ({
+    handleClosePost,
+    anchorElPost,
+    modifyId,
+    addPost,
+    modifyPost,
+    getPost,
+    postItem
+  }) => {
     const open = Boolean(anchorElPost);
     const id = open ? "simple-popover" : undefined;
     return (
@@ -24,7 +32,14 @@ export default function Modal(WrappedComponent) {
         >
           <Typography>
             <button onClick={handleClosePost}>x</button>
-            <WrappedComponent modifyId={modifyId} addPost={addPost} modifyPost={modifyPost} />
+            <WrappedComponent
+              modifyId={modifyId}
+              addPost={addPost}
+              modifyPost={modifyPost}
+              getPost={getPost}
+              postItem={postItem}
+              att={2}
+            />
           </Typography>
         </Popover>
       </div>

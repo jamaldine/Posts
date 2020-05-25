@@ -9,21 +9,24 @@ import FormComment from "./formComment";
 const AddPost = (props) => {
   const titleRef = React.createRef();
   const switchRef = useRef();
-  const { handleRefresh, modifyId, addPost, modifyPost } = props;
+  const {
+    handleRefresh,
+    modifyId,
+    addPost,
+    modifyPost,
+    postItem,
+  } = props;
   const [title, setTitle] = useState();
   const [author, setAuthor] = useState();
   const [modify, setModify] = useContext(modifyContext);
   const [showComment, setShowComment] = useState(false);
   useEffect(() => {
     if (modifyId !== undefined) {
-      axios.get(`http://localhost:4000/posts/${modifyId}`).then((res) => {
-        let modifyPost = res.data;
-        setModify(modifyPost);
-        setTitle(modifyPost.title);
-        setAuthor(modifyPost.author);
-      });
+      setModify(postItem);
+      setTitle(postItem?.title);
+      setAuthor(postItem?.author);
     }
-  }, [modifyId]);
+  }, [postItem]);
 
   const handleChange = (event, setValue) => {
     setValue(event.target.value);

@@ -19,7 +19,11 @@ const Post = (props) => {
     postId,
     handleRefresh,
     modifyId,
-    searchList, modifyPost, addPost
+    searchList,
+    modifyPost,
+    addPost,
+    getPost,
+    postItem
   } = props;
 
   const [modify, setModify] = useState("testing");
@@ -51,6 +55,8 @@ const Post = (props) => {
             modifyId={modifyId}
             addPost={addPost}
             modifyPost={modifyPost}
+            getPost={getPost}
+            postItem={postItem}
           />
         </modifyContext.Provider>
       ) : null}
