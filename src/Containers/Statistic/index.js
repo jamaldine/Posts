@@ -1,16 +1,16 @@
 import React from "react";
 
+import Chart from "../../Components/chart";
 class Statistic extends React.Component {
   constructor(props) {
     super(props);
-    
-    this.state = {}
+
+    this.state = {};
   }
-      
+
   render() {
-    return (
-      <div>STATISTIC</div>
-    );
+    console.log("statistic");
+    return <Chart />;
   }
 }
 
