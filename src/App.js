@@ -23,8 +23,8 @@ function App(props) {
         <Header />
         <Switch>
           <Route path="/posts" component={Posts} />
-          <Route path="/map" Component={Map} />
-          <Route path="/" Component={Statistic} />
+          <Route path="/map" component={Map} />
+          <Route path="/" component={Statistic} />
         </Switch>
       </BrowserRouter>
     </Provider>

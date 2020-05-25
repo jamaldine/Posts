@@ -32,7 +32,7 @@ export default function ButtonAppBar(props) {
   }, [home]);
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color='transparent'>
         <Toolbar>
           <IconButton
             edge="start"
@@ -46,13 +46,14 @@ export default function ButtonAppBar(props) {
             <Link to="/">Statistic</Link>
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            <NavLink
+          <Link to="/posts">Posts</Link>
+            {/*<NavLink
               to="/posts"
               activeClassName="selected"
-              activeStyle={{ color: "red" }}
+              activeStyle={{ color: "black" }}
             >
               Posts
-            </NavLink>
+            </NavLink>*/}
           </Typography>
           <Typography variant="h6" className={classes.title}>
             <Link to="/map">Map</Link>
