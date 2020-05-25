@@ -20,3 +20,13 @@ export function commentsListAll(){
         payload: request
     }
 }
+
+export function searchList(keyword){
+    const request = axios.get(`${URL}/posts?_limit=6&q=${keyword}`)
+                    .then(response=> response.data);
+
+    return {
+        type:'GET_SEARCH',
+        payload: request
+    }
+}
