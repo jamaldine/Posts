@@ -7,15 +7,13 @@ import { modifyContext } from "./post";
 import FormComment from "./formComment";
 
 const AddPost = (props) => {
-
   const titleRef = React.createRef();
   const switchRef = useRef();
-  console.log('res', switchRef)
-  const { handleRefresh, modifyId } = props;
+  const { handleRefresh, modifyId, addPost, modifyPost } = props;
   const [title, setTitle] = useState();
   const [author, setAuthor] = useState();
   const [modify, setModify] = useContext(modifyContext);
-  const [showComment, setShowComment]=useState(false);
+  const [showComment, setShowComment] = useState(false);
   useEffect(() => {
     if (modifyId !== undefined) {
       axios.get(`http://localhost:4000/posts/${modifyId}`).then((res) => {
@@ -46,21 +44,11 @@ const AddPost = (props) => {
       let visible = true;
       const postToSubmit = { title, author, visible };
       if (modify.id) {
-        axios
-          .put(`http://localhost:4000/posts/${modify.id}`, postToSubmit)
-          .then((res) => {
-            console.log("res 1", res);
-          });
+        modifyPost(modify.id, postToSubmit);
       } else {
-        axios.post(`http://localhost:4000/posts`, postToSubmit).then((res) => {
-          console.log(
-            "res 2",
-            res,
-            res.data.id,
-          );
-        });
+        addPost(postToSubmit);
       }
-      //handleRefresh();
+      handleRefresh();
     }
     event.preventDefault();
   };
@@ -85,7 +73,7 @@ const AddPost = (props) => {
       <div>
         <label>Title :</label>
         <input
-        ref={titleRef}
+          ref={titleRef}
           name="title"
           type="text"
           value={title}
@@ -108,8 +96,7 @@ const AddPost = (props) => {
         {requiredFields({ author }, false)}
       </div>
       <SwitchLabels ref={switchRef} setShowComment={setShowComment} />
-      {showComment && <FormComment />
-      }
+      {showComment && <FormComment />}
       <Button type="submit">Validate</Button>
     </form>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { postsListAll, commentsListAll, searchList } from "../../actions";
+import { postsListAll, commentsListAll, searchList, modifyPost, addPost } from "../../actions";
 import Post from "../../Components/post";
 class Posts extends React.Component {
   constructor(props) {
@@ -139,6 +139,8 @@ class Posts extends React.Component {
         postId={this.state.postId}
         modifyId={this.state.modifyId}
         searchList={this.props.searchList}
+        addPost={this.props.addPost}
+        modifyPost={this.props.modifyPost}
       />
     );
   }
@@ -150,7 +152,7 @@ function mapStateToProps(state) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ postsListAll, commentsListAll, searchList }, dispatch);
+  return bindActionCreators({ postsListAll, commentsListAll, searchList, modifyPost, addPost }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts);

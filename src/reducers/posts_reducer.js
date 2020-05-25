@@ -4,6 +4,10 @@ export default function (state = {}, action) {
       return { ...state, postsList: action.payload };
     case "GET_SEARCH":
       return { ...state, postsList: action.payload };
+    case "ADD_POST":
+      return { ...state, postsList: action.payload };
+    case "MODIFY_POST":
+      return { ...state, postsList: action.payload };
     default:
       return state;
   }

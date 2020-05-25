@@ -19,13 +19,12 @@ const Post = (props) => {
     postId,
     handleRefresh,
     modifyId,
-    searchList
+    searchList, modifyPost, addPost
   } = props;
 
   const [modify, setModify] = useState("testing");
   const getKeywords = (event) => {
     let key = event.target.value;
-    console.log(key)
     searchList(key);
   };
   return (
@@ -50,6 +49,8 @@ const Post = (props) => {
             handleClosePost={handleClosePost}
             handleRefresh={handleRefresh}
             modifyId={modifyId}
+            addPost={addPost}
+            modifyPost={modifyPost}
           />
         </modifyContext.Provider>
       ) : null}
