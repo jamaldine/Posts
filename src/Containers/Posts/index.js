@@ -1,7 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { postsListAll, commentsListAll, searchList, modifyPost, addPost } from "../../actions";
+import {
+  postsListAll,
+  commentsListAll,
+  searchList,
+  modifyPost,
+  addPost,
+  getPost,
+  clearGetPost,
+} from "../../actions";
 import Post from "../../Components/post";
 class Posts extends React.Component {
   constructor(props) {
@@ -77,11 +85,16 @@ class Posts extends React.Component {
     this.props.commentsListAll();
   }
 
+  componentWillUnmount(){
+    this.props.clearGetPost();
+  }
+
   handleClickPost = (event, id) => {
     this.setState({
       anchorElPost: event.currentTarget,
       modifyId: id,
     });
+    this.props.getPost(id);
   };
 
   handleClosePost = () => {
@@ -123,6 +136,7 @@ class Posts extends React.Component {
     });
   };
   render() {
+    console.log("LIFECYCLE render");
     return (
       <Post
         anchorElPost={this.state.anchorElPost}
@@ -140,6 +154,8 @@ class Posts extends React.Component {
         modifyId={this.state.modifyId}
         searchList={this.props.searchList}
         addPost={this.props.addPost}
+        getPost={this.props.getPost}
+        postItem={this.props.post.postItem}
         modifyPost={this.props.modifyPost}
       />
     );
@@ -149,10 +165,22 @@ function mapStateToProps(state) {
   return {
     posts: state.posts,
     comments: state.comments,
+    post: state.post,
   };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ postsListAll, commentsListAll, searchList, modifyPost, addPost }, dispatch);
+  return bindActionCreators(
+    {
+      postsListAll,
+      commentsListAll,
+      searchList,
+      modifyPost,
+      addPost,
+      getPost,
+      clearGetPost,
+    },
+    dispatch
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts);

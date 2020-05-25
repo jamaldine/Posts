@@ -36,8 +36,8 @@ export function searchList(keyword) {
 
 export function modifyPost(id, data) {
   let result = axios
-    .put(`http://localhost:4000/posts/${id}`, data)
-    .then(response => response.data);
+    .put(`${URL}/posts/${id}`, data)
+    .then((response) => response.data);
 
   return {
     type: "MODIFY_POST",
@@ -46,12 +46,30 @@ export function modifyPost(id, data) {
 }
 
 export function addPost(data) {
-    let result = axios
-      .post(`http://localhost:4000/posts`, data)
-      .then(response => response.data);
-  
-    return {
-      type: "ADD_POST",
-      payload: result,
-    };
-  }
+  let result = axios
+    .post(`${URL}/posts`, data)
+    .then((response) => response.data);
+
+  return {
+    type: "ADD_POST",
+    payload: result,
+  };
+}
+
+export function getPost(id) {
+  let result = axios
+    .get(`${URL}/posts/${id}`)
+    .then((response) => response.data);
+
+  return {
+    type: "GET_POST",
+    payload: result,
+  };
+}
+
+export function clearGetPost() {
+  return {
+    type: "CLEAR_GET_POST",
+    payload: null,
+  };
+}
