@@ -3,6 +3,8 @@ import { Button, Typography } from "@material-ui/core";
 import AddPost from "./addPost";
 import CommentsList from "./commentsList";
 import SearchAppBar from "../Widgets/API_components/searchAppBar";
+import BasicButtonGroup from "../Widgets/API_components/basicButtonGroup";
+import Grid from "@material-ui/core/Grid";
 
 export const modifyContext = createContext();
 
@@ -23,9 +25,9 @@ const Post = (props) => {
     modifyPost,
     addPost,
     getPost,
-    postItem
+    postItem,
   } = props;
-
+  const [active, setActive] = useState(true);
   const [modify, setModify] = useState("testing");
   const getKeywords = (event) => {
     let key = event.target.value;
@@ -33,18 +35,26 @@ const Post = (props) => {
   };
   return (
     <div>
-      <Typography variant="h1" component="h2">
-        Post
-      </Typography>
-      <SearchAppBar keywords={getKeywords} />
-      <Button
-        variant="contained"
-        color="primary"
-        component="span"
-        onClick={handleClickPost}
-      >
-        add post
-      </Button>
+      <Grid container spacing={3}>
+        <Grid item xs={6} sm={3}></Grid>
+        <Grid item xs={6} sm={3}>
+          <SearchAppBar keywords={getKeywords} />
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <BasicButtonGroup setActive={setActive} />
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Button
+            variant="contained"
+            color="primary"
+            component="span"
+            onClick={handleClickPost}
+          >
+            add post
+          </Button>
+        </Grid>
+      </Grid>
+
       {anchorElPost ? (
         <modifyContext.Provider value={[modify, setModify]}>
           <AddPost
@@ -72,6 +82,7 @@ const Post = (props) => {
         handleCloseComment={handleCloseComment}
         postId={postId}
         modifyId={modifyId}
+        active={active}
         {...props}
       />
     </div>
