@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "title": "javascript",
+      "title": "javascript ?",
       "author": "jamaldine boukir",
       "visible": true,
       "id": 3
@@ -13,220 +13,10 @@
       "id": 4
     },
     {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
+      "title": "khadija",
+      "author": "js forever",
       "visible": true,
       "id": 5
-    },
-    {
-      "title": "title x",
-      "author": "jamaldine boukir",
-      "visible": true,
-      "id": 6
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 7
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "jamaldine boukir",
-      "visible": true,
-      "id": 8
-    },
-    {
-      "title": "title3",
-      "author": "author 2ddd",
-      "visible": true,
-      "id": 9
-    },
-    {
-      "title": "title3",
-      "author": "author 2ddd",
-      "visible": true,
-      "id": 10
-    },
-    {
-      "title": "si exist",
-      "author": "oui à la",
-      "visible": true,
-      "id": 11
-    },
-    {
-      "title": "test pour les commentaires",
-      "author": "COMMENTAIRES",
-      "visible": true,
-      "id": 12
-    },
-    {
-      "title": "also c",
-      "author": "COMMENTAIRES",
-      "visible": true,
-      "id": 13
-    },
-    {
-      "title": "recuperate id",
-      "author": "COMMENTAIRES",
-      "visible": true,
-      "id": 14
-    },
-    {
-      "title": "recuperation",
-      "author": "COMMENTAIRES",
-      "visible": true,
-      "id": 15
-    },
-    {
-      "title": "res id",
-      "author": "COMMENTAIRES",
-      "visible": true,
-      "id": 16
-    },
-    {
-      "title": "switch test",
-      "author": "SWITCH",
-      "visible": true,
-      "id": 17
-    },
-    {
-      "title": "ref for switc",
-      "author": "SWITCH",
-      "visible": true,
-      "id": 18
-    },
-    {
-      "title": "ref for switcxxx",
-      "author": "SWITCHxxx",
-      "visible": true,
-      "id": 19
-    },
-    {
-      "title": "wwwwwwwwwwwwwww",
-      "author": "SWITCH",
-      "visible": true,
-      "id": 20
-    },
-    {
-      "title": "SSSSSSSSSSSS",
-      "author": "SWITCH",
-      "visible": true,
-      "id": 21
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 22
-    },
-    {
-      "title": "hhhhhhhhhhh",
-      "author": "hhhhhhhhhhhh",
-      "visible": true,
-      "id": 23
-    },
-    {
-      "title": "ddddddddddddd",
-      "author": "ddddddddddd",
-      "visible": true,
-      "id": 24
-    },
-    {
-      "title": "Single Page Applicatiponffff",
-      "author": "fffffffffffff",
-      "visible": true,
-      "id": 25
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 26
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 27
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 28
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "COMMENTAIRES",
-      "visible": true,
-      "id": 29
-    },
-    {
-      "title": "ttttttttttt",
-      "author": "tttttttttttttttt",
-      "visible": true,
-      "id": 30
-    },
-    {
-      "title": "rrrrrrrrrrrrr",
-      "author": "rrrrrrrrrrrrr",
-      "visible": true,
-      "id": 31
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 32
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 33
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 34
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 35
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 36
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 37
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 38
-    },
-    {
-      "title": "Single Page Applicatipon",
-      "author": "author 2",
-      "visible": true,
-      "id": 39
-    },
-    {
-      "title": "HELLO",
-      "author": "HELLO",
-      "visible": true,
-      "id": 40
     }
   ],
   "comments": [
@@ -243,27 +33,6 @@
       "country": "Morocco",
       "postId": 3,
       "id": 4
-    },
-    {
-      "body": "first",
-      "description": "wth",
-      "country": "France",
-      "postId": 3,
-      "id": 5
-    },
-    {
-      "body": "fffggggg",
-      "description": "",
-      "country": "England",
-      "postId": 3,
-      "id": 6
-    },
-    {
-      "body": "REACT AND VANILLA",
-      "description": "FULLSTACK JS",
-      "country": "England",
-      "postId": 3,
-      "id": 7
     }
   ],
   "profile": {

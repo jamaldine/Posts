@@ -6,7 +6,6 @@ export function useFetch(id) {
   useEffect(() => {
     if (id !== undefined) {
       axios.get(`http://localhost:4000/posts/${id}`).then((result) => {
-          console.log('result', result)
         setResponse(result.data);
       });
     }

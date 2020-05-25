@@ -2,7 +2,6 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 
 const FormFields = ({ formData, change }) => {
-  console.log('formData', formData)
   const renderFields = () => {
     const formArray = [];
     for (let element in formData) {
