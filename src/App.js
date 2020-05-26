@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Route,
   BrowserRouter,
@@ -10,21 +10,35 @@ import {
 import Posts from "./Containers/Posts";
 import Statistic from "./Containers/Statistic";
 import Map from "./Containers/Map";
+import Login from "./Containers/Login";
 import Header from "./Containers/Header";
 import { applyMiddleware, createStore } from "redux";
-import promiseMiddleware from 'redux-promise';
-import {Provider} from 'react-redux';
-import reducers from './reducers';
+import promiseMiddleware from "redux-promise";
+import { Provider } from "react-redux";
+import reducers from "./reducers";
+
 function App(props) {
-  const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore)
+  const [home, setHome] = useState(false);
+  const handleHome = () => {
+    setHome(!home);
+  };
+
+  const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(
+    createStore
+  );
+
   return (
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
-        <Header />
+        <Header {...props} home={home} handleHome={handleHome} />
         <Switch>
-          <Route path="/posts" component={Posts} />
+          <Route
+            path="/posts"
+            component={() => <Posts home={home} handleHome={handleHome} />}
+          />
           <Route path="/map" component={Map} />
-          <Route path="/" component={Statistic} />
+          <Route path="/statistic" exact component={Statistic} />
+          <Route path="/" exact component={Login} />
         </Switch>
       </BrowserRouter>
     </Provider>

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Redirect } from 'react-router-dom';
 import {
   postsListAll,
   commentsListAll,
@@ -85,7 +86,7 @@ class Posts extends React.Component {
     this.props.commentsListAll();
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.clearGetPost();
   }
 
@@ -135,8 +136,12 @@ class Posts extends React.Component {
       refresh: !this.state.refresh,
     });
   };
+
   render() {
-    console.log("LIFECYCLE render");
+    if (this.props.home) {
+      console.log('hello', this.props.home)
+      return <Redirect to="/statistic" />;
+    }
     return (
       <Post
         anchorElPost={this.state.anchorElPost}
@@ -157,6 +162,8 @@ class Posts extends React.Component {
         getPost={this.props.getPost}
         postItem={this.props.post.postItem}
         modifyPost={this.props.modifyPost}
+        home={this.props.home}
+        handleHome={this.props.handleHome}
       />
     );
   }

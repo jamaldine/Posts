@@ -1,9 +1,8 @@
 import React from "react";
-
+import RecipeReviewCard from "./recipeReviewCard";
 
 const TuileComponent = (props) => {
-    
-  return ( <>tuile</> );
+  return <RecipeReviewCard />;
 };
 
 export default TuileComponent;

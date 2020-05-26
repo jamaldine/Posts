@@ -9,7 +9,6 @@ class Statistic extends React.Component {
   }
 
   render() {
-    console.log("statistic");
     return <Chart />;
   }
 }
