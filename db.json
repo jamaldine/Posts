@@ -4,49 +4,26 @@
       "title": "javascript and react",
       "author": "jamaldine boukir",
       "visible": true,
-      "id": 3
+      "id": 3,
+      "createdAt": "",
+      "modifiedAt": ""
     },
     {
-      "title": "sami and sara",
-      "author": "adiba....",
+      "title": "javascript everywhere",
+      "author": "nicolay",
       "visible": true,
       "id": 4
-    },
-    {
-      "title": "khadija boukir",
-      "author": "js forever",
-      "visible": true,
-      "id": 5
     }
   ],
   "comments": [
     {
-      "body": "my comment",
+      "body": "Khadija",
       "description": "",
-      "country": "Morocco",
-      "postId": 3,
-      "id": 3
-    },
-    {
-      "body": "first commit",
-      "description": "",
-      "country": "Morocco",
-      "postId": 3,
-      "id": 4
-    },
-    {
-      "body": "my comment",
-      "description": "bbbbbbbbbbbb",
       "country": "",
       "postId": 3,
-      "id": 5
-    },
-    {
-      "body": "smimi",
-      "description": "sara",
-      "country": "",
-      "postId": 4,
-      "id": 6
+      "id": 7,
+      "createdAt": "",
+      "modifiedAt": ""
     }
   ],
   "profile": {

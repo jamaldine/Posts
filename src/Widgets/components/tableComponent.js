@@ -101,7 +101,7 @@ const TableComponent = (props) => {
                       />
                       </TableCell>*/}
                     <TableCell>
-                      <LongMenu options={options} {...props} />
+                      <LongMenu options={options} {...props} postId={post.id} />
                     </TableCell>
                   </TableRow>
                 ) : null

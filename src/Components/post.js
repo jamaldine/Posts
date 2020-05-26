@@ -26,6 +26,7 @@ const Post = (props) => {
     addPost,
     getPost,
     postItem,
+    handleHome,
   } = props;
   const [active, setActive] = useState(true);
   const [modify, setModify] = useState("testing");
@@ -36,9 +37,11 @@ const Post = (props) => {
   return (
     <div>
       <Grid container spacing={3}>
-        <Grid item xs={6} sm={3}></Grid>
         <Grid item xs={6} sm={3}>
           <SearchAppBar keywords={getKeywords} />
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          ici les filtres
         </Grid>
         <Grid item xs={6} sm={3}>
           <BasicButtonGroup setActive={setActive} />
@@ -67,6 +70,7 @@ const Post = (props) => {
             modifyPost={modifyPost}
             getPost={getPost}
             postItem={postItem}
+            handleHome={handleHome}
           />
         </modifyContext.Provider>
       ) : null}
@@ -83,8 +87,10 @@ const Post = (props) => {
         postId={postId}
         modifyId={modifyId}
         active={active}
+        handleHome={handleHome}
         {...props}
       />
+      <Button>load more</Button>
     </div>
   );
 };

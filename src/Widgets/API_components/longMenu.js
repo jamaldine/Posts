@@ -10,8 +10,7 @@ import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu(props) {
-  const { options, handleClickPost, handleRefresh } = props;
-  console.log("options", props);
+  const { options, handleClickPost, handleRefresh, postId } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleDelete = (event, id) => {
@@ -35,12 +34,27 @@ export default function LongMenu(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-/*<HighlightOffIcon
+  /*<HighlightOffIcon
   onClick={(event) => handleDelete(event, post.id)}
 />
 <EditOutlinedIcon
   onClick={(event) => handleClickPost(event, post.id)}
 />*/
+const toDelete = (event) => {
+  handleDelete(event, postId)
+  handleClose();
+}
+
+  let tag = [
+    <HighlightOffIcon onClick={(event) => toDelete} />,
+    <EditOutlinedIcon onClick={(event) => handleClickPost(event, postId)} />,
+  ];
+
+  const handleAction = (option) => {
+    console.log("{tag[i]}", option);
+    //handleDelete(event, postId)}
+  };
+  
   return (
     <div>
       <IconButton
@@ -64,13 +78,13 @@ export default function LongMenu(props) {
           },
         }}
       >
-        {options.map((option) => (
+        {options.map((option, i) => (
           <MenuItem
             key={option}
             selected={option === "Pyxis"}
-            onClick={handleClose}
+            //onClick={handleAction(i)}
           >
-            {option}
+            {tag[i]}{option}
           </MenuItem>
         ))}
       </Menu>

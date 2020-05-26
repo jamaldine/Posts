@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import axios from "axios";
+import { firebaseDB } from "../firebase";
 import { Button, Alert } from "react-bootstrap";
 import Modal from "../HOC/modal";
 import { SwitchLabels } from "../Widgets/API_components/switch";
@@ -9,13 +9,7 @@ import FormComment from "./formComment";
 const AddPost = (props) => {
   const titleRef = React.createRef();
   const switchRef = useRef();
-  const {
-    handleRefresh,
-    modifyId,
-    addPost,
-    modifyPost,
-    postItem,
-  } = props;
+  const { handleRefresh, modifyId, addPost, modifyPost, postItem } = props;
   const [title, setTitle] = useState();
   const [author, setAuthor] = useState();
   const [modify, setModify] = useContext(modifyContext);
@@ -50,6 +44,11 @@ const AddPost = (props) => {
         modifyPost(modify.id, postToSubmit);
       } else {
         addPost(postToSubmit);
+        firebaseDB
+          .ref("users")
+          .push(postToSubmit)
+          .then(() => console.log("addes"))
+          .catch((e) => console.log(e));
       }
       handleRefresh();
     }
