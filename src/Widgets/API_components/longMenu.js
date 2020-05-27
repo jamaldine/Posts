@@ -50,10 +50,6 @@ const toDelete = (event) => {
     <EditOutlinedIcon onClick={(event) => handleClickPost(event, postId)} />,
   ];
 
-  const handleAction = (option) => {
-    console.log("{tag[i]}", option);
-    //handleDelete(event, postId)}
-  };
   
   return (
     <div>
