@@ -36,9 +36,19 @@ function App(props) {
             path="/posts"
             component={() => <Posts home={home} handleHome={handleHome} />}
           />
-          <Route path="/map" component={Map} />
-          <Route path="/statistic" exact component={Statistic} />
-          <Route path="/" exact component={Login} />
+          <Route
+            path="/map"
+            component={() => <Map home={home} handleHome={handleHome} />}
+          />
+          <Route
+            path="/statistic"
+            component={() => <Statistic home={home} handleHome={handleHome} />}
+          />
+          <Route
+            path="/"
+            exact
+            component={() => <Login home={home} handleHome={handleHome} />}
+          />
         </Switch>
       </BrowserRouter>
     </Provider>
