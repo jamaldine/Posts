@@ -139,7 +139,6 @@ class Posts extends React.Component {
 
   render() {
     if (this.props.home) {
-      console.log('hello', this.props.home)
       return <Redirect to="/" />;
     }
     return (

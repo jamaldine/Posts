@@ -21,7 +21,7 @@ componentDidMount(){
         this.props.handleHome();
       } else
         console.log('connot to connect !')
-    }); /**/
+    }); 
   };
 
   signOut = () => {

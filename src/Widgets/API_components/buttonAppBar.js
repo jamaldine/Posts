@@ -31,7 +31,6 @@ export default function ButtonAppBar(props) {
   const { handleHome } = props;
   const classes = useStyles();
   const redirect = () => {
-    console.log("reeeeeeeeeeeeee")
     firebase.auth().signOut();
     handleHome();
     setAnchorEl(null);

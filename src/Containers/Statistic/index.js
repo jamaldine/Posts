@@ -9,9 +9,7 @@ class Statistic extends React.Component {
   }
 
   render() {
-    console.log(this.props.home)
     if (this.props.home) {
-      console.log('hello', this.props.home)
       return <Redirect to="/" />;
     }
     return <Chart />;
