@@ -31,8 +31,10 @@ export default function ButtonAppBar(props) {
   const { handleHome } = props;
   const classes = useStyles();
   const redirect = () => {
+    console.log("reeeeeeeeeeeeee")
     firebase.auth().signOut();
     handleHome();
+    setAnchorEl(null);
   };
 
   const [auth, setAuth] = React.useState(true);
@@ -53,7 +55,7 @@ export default function ButtonAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <FormGroup>
+      {/*<FormGroup>
         <FormControlLabel
           control={
             <Switch
@@ -64,7 +66,7 @@ export default function ButtonAppBar(props) {
           }
           label={auth ? "Logout" : "Login"}
         />
-      </FormGroup>
+      </FormGroup>*/}
       <AppBar position="static" color="transparent">
         <Toolbar>
           <IconButton

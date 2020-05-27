@@ -3,24 +3,25 @@ import { Redirect } from "react-router-dom";
 import { firebaseDB, googleAuth, firebase } from "../../firebase";
 
 class Login extends Component {
-  state = {
-    status: null,
-    isAuth: false,
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: null
+    };
+  }
+componentDidMount(){
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) console.log('user',user); else console.log('not user')
+  });
+}
   signIn = () => {
-    /*firebase.auth().signInWithPopup(googleAuth);
+    firebase.auth().signInWithPopup(googleAuth);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.setState({
-          isAuth: true,
-        });
-        return <Redirect to="/statistic" />;
+        this.props.handleHome();
       } else
-        this.setState({
-          isAuth: false,
-        });
-    });*/
+        console.log('connot to connect !')
+    }); /**/
   };
 
   signOut = () => {
@@ -28,12 +29,14 @@ class Login extends Component {
   };
 
   render() {
+    if (!this.props.home) {
+      return <Redirect to="/statistic" />;
+    }
     return (
       <div>
         login: <input type="text" />
         password: <input type="password" />
-        <button onClick={this.signIn()}>Login</button>
-        {/*<button onClick={this.signOut}>Logout</button>*/}
+        <button onClick={this.signIn}>Login</button>
       </div>
     );
   }
