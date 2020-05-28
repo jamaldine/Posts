@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 import {
   postsListAll,
   commentsListAll,
@@ -78,6 +78,7 @@ class Posts extends React.Component {
         },
       },
       refresh: false,
+      tuile_table: true,
     };
   }
 
@@ -137,6 +138,18 @@ class Posts extends React.Component {
     });
   };
 
+  handleTuile = () => {
+    this.setState({
+      tuile_table: false,
+    });
+  };
+
+  handleTable = () => {
+    this.setState({
+      tuile_table: true,
+    });
+  };
+
   render() {
     if (this.props.home) {
       return <Redirect to="/" />;
@@ -163,6 +176,9 @@ class Posts extends React.Component {
         modifyPost={this.props.modifyPost}
         home={this.props.home}
         handleHome={this.props.handleHome}
+        tuile_table={this.state.tuile_table}
+        handleTuile={this.handleTuile}
+        handleTable={this.handleTable}
       />
     );
   }

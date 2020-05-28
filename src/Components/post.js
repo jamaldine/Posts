@@ -1,11 +1,13 @@
 import React, { useState, createContext } from "react";
-import { Button, Typography } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
+import Button from "react-bootstrap/Button";
 import AddPost from "./addPost";
 import CommentsList from "./commentsList";
 import SearchAppBar from "../Widgets/API_components/searchAppBar";
+import Tags from "../Widgets/API_components/tags";
 import BasicButtonGroup from "../Widgets/API_components/basicButtonGroup";
 import Grid from "@material-ui/core/Grid";
-
+import "./styles/posts.css";
 export const modifyContext = createContext();
 
 const Post = (props) => {
@@ -36,28 +38,26 @@ const Post = (props) => {
   };
   return (
     <div>
-      <Grid container spacing={3}>
-        <Grid item xs={6} sm={3}>
-          <SearchAppBar keywords={getKeywords} />
+      <Grid container spacing={3} className="wrapper">
+        <Grid className="box1">
+          <SearchAppBar keywords={getKeywords} className="search" />
         </Grid>
-        <Grid item xs={6} sm={3}>
-          ici les filtres
+        <Grid className="box2">
+          <Tags className="tags"/>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <BasicButtonGroup setActive={setActive} />
+        <Grid className="box3">
+          <BasicButtonGroup setActive={setActive} className="tuile_table" {...props} />
         </Grid>
-        <Grid item xs={6} sm={3}>
+        <Grid className="box4">
           <Button
-            variant="contained"
-            color="primary"
-            component="span"
+            variant="danger"
             onClick={handleClickPost}
           >
-            add post
+            + POST
           </Button>
         </Grid>
       </Grid>
-
+      {/**/}
       {anchorElPost ? (
         <modifyContext.Provider value={[modify, setModify]}>
           <AddPost
