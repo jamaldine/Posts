@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import {
   Route,
   BrowserRouter,
-  HashRouter,
-  MemoryRouter,
   Switch,
 } from "react-router-dom";
 
@@ -30,7 +28,7 @@ function App(props) {
   return (
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
-        <Header {...props} home={home} handleHome={handleHome} />
+        {/**/}<Header {...props} home={home} handleHome={handleHome} />
         <Switch>
           <Route
             path="/posts"
