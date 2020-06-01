@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
   },
+  input:{
+    border: '1px black solid'
+  }
 }));
 
 export default function Tags() {
@@ -28,8 +31,8 @@ export default function Tags() {
         filterSelectedOptions
         renderInput={(params) => (
           <TextField
+          className={classes.input}
             {...params}
-            variant="outlined"
             label="filterSelectedOptions"
             placeholder="Favorites"
           />

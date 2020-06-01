@@ -1,0 +1,33 @@
+/*.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  border: 1px solid rgb(136, 133, 133);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.item {
+    color: #000;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+}
+
+*/
+
+/*
+
+    display: flex;mettre les elements les uns à coté des autres
+    flex-direction: column;//mettre les elements les uns en dessous des autres
+    flex-wrap: wrap;//mettre les elements suivants à la ligne si la ligne est pleine. nowrap: ne va jamais à la ligne
+    flex-flow: row wrap
+
+    justify-content: end;
+    align-content: flex-end;
+
+*/
