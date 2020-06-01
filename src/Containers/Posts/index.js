@@ -12,6 +12,7 @@ import {
   clearGetPost,
 } from "../../actions";
 import Post from "../../Components/post";
+import './post.css';
 class Posts extends React.Component {
   constructor(props) {
     super(props);
@@ -156,6 +157,7 @@ class Posts extends React.Component {
     }
     return (
       <Post
+      className="container"
         anchorElPost={this.state.anchorElPost}
         anchorElComment={this.state.anchorElComment}
         handleClickPost={this.handleClickPost}

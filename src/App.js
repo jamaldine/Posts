@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  Route,
-  BrowserRouter,
-  Switch,
-} from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import Posts from "./Containers/Posts";
 import Statistic from "./Containers/Statistic";
@@ -28,7 +24,8 @@ function App(props) {
   return (
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
-        {/**/}<Header {...props} home={home} handleHome={handleHome} />
+        {/**/}
+        <Header {...props} home={home} handleHome={handleHome} />
         <Switch>
           <Route
             path="/posts"

@@ -1,0 +1,5 @@
+.tuile_table:active,
+.tuile_table:focus {
+
+  box-shadow: none !important;
+}

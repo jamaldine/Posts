@@ -4,6 +4,7 @@ import React from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import { Table, Grid } from "react-bootstrap-icons";
+import './styles/basicButtonGroup.css'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -29,10 +30,10 @@ export default function BasicButtonGroup(props) {
   return (
     <div className={classes.root}>
       <ButtonGroup aria-label="Basic example">
-        <Button onClick={handleActive} variant="danger" style={{border : tuile_table ? "2px solid black" : null}}>
+        <Button className='tuile_table' onClick={handleActive} variant="danger" style={{border : tuile_table ? "3px solid black" : null}}>
           <Table />
         </Button>
-        <Button onClick={handleDeactive} variant="danger" style={{border : tuile_table ? null : "2px solid black"}}>
+        <Button className='tuile_table' onClick={handleDeactive} variant="danger" style={{border : tuile_table ? null : "3px solid black"}}>
           <Grid />
         </Button>
       </ButtonGroup>
