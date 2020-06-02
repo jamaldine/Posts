@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import SideNavigation from "./sideNavigation";
 import ButtonAppBar from "../../Widgets/API_components/buttonAppBar";
 class Header extends React.Component {
   constructor(props) {
@@ -9,7 +9,16 @@ class Header extends React.Component {
   }
 
   render() {
-    return <ButtonAppBar {...this.props} />;
+    return (
+      <Fragment>
+        <SideNavigation
+          {...this.props}
+          onHideNav={() => this.props.setShowNav(false)}
+          onShowNav={() => this.props.setShowNav(true)}
+        />
+        <ButtonAppBar {...this.props} openNavBar={() => this.props.setShowNav(true)} />
+      </Fragment>
+    );
   }
 }
 

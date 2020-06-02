@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import Posts from "./Containers/Posts";
@@ -12,10 +12,12 @@ import { Provider } from "react-redux";
 import reducers from "./reducers";
 
 function App(props) {
-  const [home, setHome] = useState(false);
+  const [home, setHome] = useState(true);
   const handleHome = () => {
     setHome(!home);
   };
+  const [showNav, setShowNav]=useState(false);
+
 
   const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(
     createStore
@@ -25,7 +27,7 @@ function App(props) {
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
         {/**/}
-        <Header {...props} home={home} handleHome={handleHome} />
+        <Header {...props} home={home} handleHome={handleHome} showNav={showNav} setShowNav={setShowNav} />
         <Switch>
           <Route
             path="/posts"
