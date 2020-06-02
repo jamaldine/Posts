@@ -56,7 +56,7 @@ const Chart = () => {
             fontSize: 15,
           },
           legend: {
-            display: true,
+            display: false,
             position: "right",
           },
         }}

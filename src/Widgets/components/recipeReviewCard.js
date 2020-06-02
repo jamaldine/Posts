@@ -15,7 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
+import Avatare from '../../Components/data/baseMedia/post.jpg';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -52,7 +52,7 @@ export default function RecipeReviewCard() {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            J
           </Avatar>
         }
         action={
@@ -60,13 +60,13 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
+        title="Jamal dine BOUKIR"
         subheader="September 14, 2016"
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        image={Avatare}
+        title="avatar"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">

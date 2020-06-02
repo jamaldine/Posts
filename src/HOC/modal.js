@@ -1,7 +1,7 @@
 import React from "react";
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
-
+import './modal.css'
 export default function Modal(WrappedComponent) {
   return ({
     handleClosePost,
@@ -15,7 +15,7 @@ export default function Modal(WrappedComponent) {
     const open = Boolean(anchorElPost);
     const id = open ? "simple-popover" : undefined;
     return (
-      <div>
+      <div >
         <Popover
           id={id}
           open={open}
@@ -30,9 +30,10 @@ export default function Modal(WrappedComponent) {
             horizontal: "center",
           }}
         >
-          <Typography>
+          <Typography className="center-screen">
             <button onClick={handleClosePost}>x</button>
             <WrappedComponent
+
               modifyId={modifyId}
               addPost={addPost}
               modifyPost={modifyPost}
