@@ -43,7 +43,6 @@ const Post = (props) => {
           <SearchAppBar keywords={getKeywords} className="search" />
         </Grid>
         <Grid className="box2">
-          {/*<Tags className="tags" />*/}
           <select name="pets" id="pet-select" className="filter">
             <option value="">--Please choose an author--</option>
           </select>
@@ -67,7 +66,6 @@ const Post = (props) => {
           </Button>
         </Grid>
       </Grid>
-      {/*  */}
       {anchorElPost ? (
         <modifyContext.Provider value={[modify, setModify]}>
           <AddPost
@@ -85,7 +83,7 @@ const Post = (props) => {
         </modifyContext.Provider>
       ) : null}
       <CommentsList
-        className="container"
+        className="commentsList"
         handleClickPost={handleClickPost}
         anchorElPost={anchorElPost}
         handleClosePost={handleClosePost}

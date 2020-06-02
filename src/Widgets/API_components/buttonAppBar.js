@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ButtonAppBar(props) {
-  const { handleHome } = props;
+  const { handleHome, openNavBar } = props;
   const classes = useStyles();
   const redirect = () => {
     firebase.auth().signOut();
@@ -53,19 +53,7 @@ export default function ButtonAppBar(props) {
   };
 
   return (
-    <div className={classes.root}>
-      {/*<FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? "Logout" : "Login"}
-        />
-      </FormGroup>*/}
+    <div className={classes.root} >
       <AppBar position="static" color="transparent">
         <Toolbar>
           <IconButton
@@ -74,34 +62,13 @@ export default function ButtonAppBar(props) {
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon />
+            <MenuIcon onClick={openNavBar} />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            <Link to="/statistic">Statistic</Link>
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
-            <Link to="/posts">Posts</Link>
-            {/*<NavLink
-              to="/posts"
-              activeClassName="selected"
-              activeStyle={{ color: "black" }}
-            >
-              Posts
-            </NavLink>*/}
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
-            <Link to="/map">Map</Link>
-          </Typography>
-          {/*<Button color="inherit" onClick={redirect}>
-            Login
-          </Button>*/}
-          {/*<Typography variant="h6" className={classes.title}>
-            <Link to="/login">Login</Link>
-        </Typography>*/}
 
           {auth && (
-            <div>
+            <div style={{ marginRight: "-2800px" }}>
               <IconButton
+                
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
@@ -111,6 +78,7 @@ export default function ButtonAppBar(props) {
                 <AccountCircle />
               </IconButton>
               <Menu
+              
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -127,7 +95,6 @@ export default function ButtonAppBar(props) {
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
-                {/*<Link to="/">Logout</Link>*/}
                 <Button onClick={redirect}>Logout</Button>
               </Menu>
             </div>

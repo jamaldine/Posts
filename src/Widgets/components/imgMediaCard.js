@@ -7,6 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import Divider from "@material-ui/core/Divider";
 import AddComment from "../../Components/addComment";
 import Avatar from "../../Components/data/baseMedia/post.jpg";
 import "./styles/imgMediaCard.css";
@@ -37,6 +38,7 @@ export default function ImgMediaCard(props) {
                       {post.author}
                     </Typography>
                   </CardContent>
+                  <Divider />
                   <CardContent className='content'>
                     <Typography gutterBottom variant="h5" component="h2">
                       {post.title}
@@ -60,6 +62,7 @@ export default function ImgMediaCard(props) {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
+                <Divider />
                 <CardActions className="item">
                   <Button size="small" color="primary">
                     Share
