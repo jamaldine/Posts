@@ -44,14 +44,14 @@ export default function ImgMediaCard(props) {
                       {post.title}
                     </Typography>
                   </CardContent>
-                  {/*<CardMedia
+                  <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
                     height="540"
                     width="20px"
                     image="https://place-hold.it/350x150"
                     title="Contemplative Reptile"
-                  />*/}
+                  />{/**/}
                   <CardContent className='content'>
                     <Typography
                       variant="body2"

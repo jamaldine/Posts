@@ -5,7 +5,7 @@ import Modal from "../HOC/modal";
 import { SwitchLabels } from "../Widgets/API_components/switch";
 import { modifyContext } from "./post";
 import FormComment from "./formComment";
-
+import "./styles/addPost.css";
 const AddPost = (props) => {
   const titleRef = React.createRef();
   const switchRef = useRef();
@@ -71,7 +71,7 @@ const AddPost = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="center-screen">
       <div>
         <label>Title :</label>
         <input

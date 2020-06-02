@@ -22,7 +22,7 @@ export const SwitchLabels = React.forwardRef((props, ref) => {
             name="checkedSwitch"
           />
         }
-        label={`${checkSwitch ? "with comment" : "whithout comment"}`}
+        label={`${checkSwitch ? "with comment" : "without comment"}`}
       />
     </FormGroup>
   );
