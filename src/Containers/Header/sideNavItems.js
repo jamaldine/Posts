@@ -6,16 +6,16 @@ import ExploreOffIcon from "@material-ui/icons/ExploreOff";
 const SideNavItems = (props) => {
   return (
     <React.Fragment>
-      <Link to="/statistic">
+      <Link to="/statistic" onClick={props.onHideNav}>
         {" "}
         <HomeIcon />
         Statistic
       </Link>
-      <Link to="/posts">
+      <Link to="/posts" onClick={props.onHideNav}>
         <NetworkCellIcon />
         Posts
       </Link>
-      <Link to="/map">
+      <Link to="/map" onClick={props.onHideNav}>
         <ExploreOffIcon />
         Map
       </Link>

@@ -1,0 +1,33 @@
+.login_container {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 650px;
+  background-color: lightgrey;
+  margin-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 15px;
+}
+.labelle {
+  width: 95px;
+  text-align: left;
+}
+.btn_form {
+  border: solid 2px gray;
+  width: 215px;
+  float: right;
+  text-align: center;
+  margin-left: 106px;
+}
+.select_form {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+@media screen and (max-width: 1000px) {
+    .login_container {
+        position: absolute;
+        left: 250px;
+      }
+}
