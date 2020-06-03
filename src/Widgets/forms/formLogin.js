@@ -35,7 +35,7 @@ const FormLogin = (props) => {
   return (
     <form className='login_container'>
       {template()}
-      <button onClick={props.signIn} className='btn_form'> Sign In </button>
+      <button onClick={props.signIn} className='btn_form'>Sign In</button>
     </form>
   );
 };

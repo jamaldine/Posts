@@ -16,8 +16,7 @@ function App(props) {
   const handleHome = () => {
     setHome(!home);
   };
-  const [showNav, setShowNav]=useState(false);
-
+  const [showNav, setShowNav] = useState(false);
 
   const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(
     createStore
@@ -27,7 +26,15 @@ function App(props) {
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
         {/**/}
-        <Header {...props} home={home} handleHome={handleHome} showNav={showNav} setShowNav={setShowNav} />
+        {!home && (
+          <Header
+            {...props}
+            home={home}
+            handleHome={handleHome}
+            showNav={showNav}
+            setShowNav={setShowNav}
+          />
+        )}
         <Switch>
           <Route
             path="/posts"
