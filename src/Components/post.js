@@ -99,7 +99,7 @@ const Post = (props) => {
         handleHome={handleHome}
         {...props}
       />
-      <Button>load more</Button>
+      {/*<Button>load more</Button>*/}
     </React.Fragment>
   );
 };

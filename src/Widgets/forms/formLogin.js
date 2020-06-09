@@ -1,5 +1,8 @@
 import React from "react";
-import './formLogin.css';
+import "./formLogin.css";
+import logo from "./logo/B-logo-1.png";
+import google from "./google/google.png";
+import { Typography, Button } from "@material-ui/core";
 const FormLogin = (props) => {
   const template = () => {
     const { loginData } = props;
@@ -22,7 +25,8 @@ const FormLogin = (props) => {
       case "input":
         template = (
           <div>
-            <label className='labelle'>{typeElement.labelText}</label> : <input className='select_form' {...typeElement.config} />
+            <label className="labelle">{typeElement.labelText}</label>{" "}
+            <input className="select_form borderd" {...typeElement.config} />
           </div>
         );
         break;
@@ -33,9 +37,30 @@ const FormLogin = (props) => {
     return template;
   };
   return (
-    <form className='login_container'>
+    <form className="login_container">
+      <div class="flex-row">
+        <img class="img" src={logo} alt="boukir" />
+        <Typography class="flex-item">Live your day as you want</Typography>
+      </div>
+      <div class="flex-row separate">
+        <Button onClick={props.signIn} variant="contained" color="default">
+          <img class="google" src={google} alt="google" /> Continue with Google
+        </Button>
+      </div>
+      <div class="flex-row separate">
+        <hr />
+        or
+        <hr />
+      </div>
+
       {template()}
-      <button onClick={props.signIn} className='btn_form'>Sign In</button>
+      <Button variant="contained" color="default" className="btn_form">
+        Sign In
+      </Button>
+      <div class="account flex-column">
+        <Typography>dont have an account ?</Typography>
+        <Typography class="pointer">Create account</Typography>
+      </div>
     </form>
   );
 };
