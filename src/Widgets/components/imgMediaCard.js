@@ -65,12 +65,27 @@ export default function ImgMediaCard(props) {
                 <Divider />
                 <CardActions className="item">
                   <Button size="small" color="primary">
-                    Share
+                    Like
                   </Button>
                   <Button size="small" color="primary">
-                    Learn More
+                    Comment
+                  </Button>
+                  <Button size="small" color="primary">
+                  Share
                   </Button>
                 </CardActions>
+                <Divider />
+
+                <CardContent className='content'>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      my comment
+                    </Typography>
+                  </CardContent>
+
               </Card>
             ) : null
           )

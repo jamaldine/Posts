@@ -1,11 +1,11 @@
 .login_container {
-  height: 200px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
   left: 650px;
-  background-color: lightgrey;
+  background-color: rgb(231, 99, 59);
   margin-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
@@ -14,20 +14,65 @@
 .labelle {
   width: 95px;
   text-align: left;
+  font-size: 17px;
 }
 .btn_form {
   border: solid 2px gray;
-  width: 215px;
+  width: 214px;
   float: right;
   text-align: center;
-  margin-left: 106px;
+  margin-left: 299px;
+  align-self: flex-end;
 }
 .select_form {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 @media screen and (max-width: 1000px) {
-    .login_container {
-        position: absolute;
-        left: 250px;
-      }
+  .login_container {
+    position: absolute;
+    left: 250px;
+  }
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+}
+.google {
+  width: 30px;
+  height: 30px;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+hr {
+  border: 2px solid black;
+  width: 120px;
+}
+.account {
+  margin: 100px 0px 0px 0px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.flex-item {
+  align-self: flex-end;
+  margin: 20px 0px 0px 0px;
+}
+
+.separate {
+  margin: 10px 0px 0px 10px;
+}
+.borderd {
+  border: 1px solid black;
+}
+.pointer {
+  cursor: pointer;
+  text-decoration: underline;
 }
