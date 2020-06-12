@@ -13,7 +13,11 @@ const FormLogin = (props) => {
     }
 
     return data.map((item) => {
-      return <div key={item.id}>{renderTemplate(item)}</div>;
+      return (
+        <div style={{ marginBottom: "15px" }} key={item.id}>
+          {renderTemplate(item)}
+        </div>
+      );
     });
   };
 
@@ -24,9 +28,9 @@ const FormLogin = (props) => {
     switch (typeElement.element) {
       case "input":
         template = (
-          <div>
+          <div className="flex-row ">
             <label className="labelle">{typeElement.labelText}</label>{" "}
-            <input className="select_form borderd" {...typeElement.config} />
+            <input className="select_form borderd " {...typeElement.config} />
           </div>
         );
         break;
@@ -52,9 +56,12 @@ const FormLogin = (props) => {
         or
         <hr />
       </div>
-
-      {template()}
-      <Button variant="contained" color="default" className="btn_form">
+      <div>{template()}</div>
+      <Button
+        variant="contained"
+        color="primary"
+        className="btn_form flex-item separate-top"
+      >
         Sign In
       </Button>
       <div class="account flex-column">
