@@ -2,16 +2,16 @@ import React from 'react';
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 
-const Modal =({children, handleCloseComment, anchorElComment})=>{
-    const open = Boolean(anchorElComment);
+const Modal =({children, handleCloseModal, anchorElModal})=>{
+    const open = Boolean(anchorElModal);
     const id = open ? "simple-popover" : undefined;
     return (
       <div>
         <Popover
           id={id}
           open={open}
-          anchorEl={anchorElComment}
-          onClose={handleCloseComment}
+          anchorEl={anchorElModal}
+          onClose={handleCloseModal}
           anchorOrigin={{
             vertical: "bottom",
             horizontal: "center",
@@ -22,7 +22,7 @@ const Modal =({children, handleCloseComment, anchorElComment})=>{
           }}
         >
           <Typography>
-            <button onClick={handleCloseComment}>x</button>
+            <button onClick={handleCloseModal}>x</button>
             {children}
           </Typography>
         </Popover>
