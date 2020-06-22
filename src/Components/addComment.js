@@ -6,8 +6,8 @@ const AddComment = (props) => {
   const { handleCloseComment, anchorElComment, postId } = props;
   return (
     <Modal
-      handleCloseComment={handleCloseComment}
-      anchorElComment={anchorElComment}
+      handleCloseModal={handleCloseComment}
+      anchorElModal={anchorElComment}
     >
       <FormComment {...props} postId={postId} />
     </Modal>
