@@ -157,7 +157,7 @@ class Posts extends React.Component {
     }
     return (
       <Post
-      className="container"
+      className="container post"
         anchorElPost={this.state.anchorElPost}
         anchorElComment={this.state.anchorElComment}
         handleClickPost={this.handleClickPost}

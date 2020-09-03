@@ -44,7 +44,8 @@ const Post = (props) => {
         </Grid>
         <Grid className="box2">
           <select name="pets" id="pet-select" className="filter">
-            <option value="">--Please choose an author--</option>
+          <option value="">--Please choose an author--</option>
+            <option value="">an author</option>
           </select>
           <select name="pets" id="pet-select" className="filter">
             <option value="">--Please choose a title--</option>

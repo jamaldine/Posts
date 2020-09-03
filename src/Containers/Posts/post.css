@@ -1,8 +1,13 @@
-.container{
-    padding-top: 5px;
-    padding-right: 5px;
-    display: flex; 
-    text-align: center;
-    align-items: center;
-    justify-content: stretch;
+.container {
+  padding-top: 5px;
+  padding-right: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: stretch;
+}
+.post {
+  background-image: url(../../style/backbraoundImage/yellow-bokeh-photo-949587.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

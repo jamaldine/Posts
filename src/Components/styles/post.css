@@ -1,6 +1,5 @@
-.wrapper
-{
-  border:rgb(105, 81, 87) solid 1px;
+.wrapper {
+  border: rgb(105, 81, 87) solid 1px;
   margin-bottom: 10px;
 }
 .container {
@@ -9,12 +8,10 @@
   align-items: flex-start;
   justify-content: space-evenly;
   padding-top: 45px;
-  
-  
 }
 .box1 {
   border-radius: 0px;
-  border: black solid 2px;
+  border: black solid 1px;
   border-radius: 15px;
   flex: 1;
   order: 1;
@@ -29,25 +26,27 @@
   flex: 1;
   order: 3;
   margin-right: -215px;
-  
 }
 .box4 {
   flex: 1;
   order: 4;
   margin-right: -295px;
-  
 }
 .tuile_table {
   padding: 20px;
 }
-.filter{
+.filter {
   height: 35px;
   border-radius: 5px;
-  border: 2px solid;
-  margin:2px;
+  border: 1px solid black;
+  margin: 2px;
   background-color: white !important;
 }
-
-.commentsList{
-  background-color:tomato;
+.option {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: darkgrey;
+  
+}
+.commentsList {
+  background-color: tomato;
 }
