@@ -1,0 +1,19 @@
+.bloc-filter-select{
+  display: inline-block;
+  .filter-select{
+    display: inline-block;
+    margin-right: 22px;
+    &:before{
+      content: '\f078';
+      font-family: FontAwesome;
+      font-style: normal;
+      font-size: 10px;
+      padding: 7px;
+      position: relative;
+      top: -2px;
+    }
+  }
+  .filter-options{
+    display: none;
+  }
+}

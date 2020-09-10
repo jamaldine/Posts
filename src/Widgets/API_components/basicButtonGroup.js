@@ -28,15 +28,13 @@ export default function BasicButtonGroup(props) {
     handleTuile()
   };
   return (
-    <div className={classes.root}>
-      <ButtonGroup aria-label="Basic example">
-        <Button className='tuile_table' onClick={handleActive} variant="danger" style={{border : tuile_table ? "3px solid black" : null}}>
-          <Table />
-        </Button>
-        <Button className='tuile_table' onClick={handleDeactive} variant="danger" style={{border : tuile_table ? null : "3px solid black"}}>
-          <Grid />
-        </Button>
-      </ButtonGroup>
-    </div>
+    <ButtonGroup aria-label="Basic example">
+      <Button className='tuile_table' onClick={handleActive} variant="danger" style={{border : tuile_table ? "3px solid black" : null}}>
+        <Table />
+      </Button>
+      <Button className='tuile_table' onClick={handleDeactive} variant="danger" style={{border : tuile_table ? null : "3px solid black"}}>
+        <Grid />
+      </Button>
+    </ButtonGroup>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { firebaseDB } from "../firebase";
+
 import { Button, Alert } from "react-bootstrap";
 import Modal from "../HOC/modal";
 import { SwitchLabels } from "../Widgets/API_components/switch";
@@ -44,11 +44,7 @@ const AddPost = (props) => {
         modifyPost(modify.id, postToSubmit);
       } else {
         addPost(postToSubmit);
-        firebaseDB
-          .ref("users")
-          .push(postToSubmit)
-          .then(() => console.log("addes"))
-          .catch((e) => console.log(e));
+
       }
       handleRefresh();
     }

@@ -1,0 +1,23 @@
+.search{
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 100;
+    text-decoration: inherit;
+    border: 0;
+    background: transparent;
+    vertical-align: middle;
+    width: 50px;
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
+    &:focus,
+    &:active,
+    &:hover{
+        width: 150px;
+        border: none;
+        outline: none;
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}

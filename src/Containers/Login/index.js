@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { googleAuth, firebase } from "../../firebase";
 import FormLogin from "../../Widgets/forms/formLogin";
 import "./login.css";
 class Login extends Component {
@@ -46,22 +45,14 @@ class Login extends Component {
     };
   }
   componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) console.log("user", user);
-      else console.log("not user");
-    });
+    
   }
   signIn = () => {
-    firebase.auth().signInWithPopup(googleAuth);
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.props.handleHome();
-      } else console.log("connot to connect !");
-    });
+    
   };
 
   signOut = () => {
-    firebase.auth().signOut();
+    
   };
 
   render() {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, Redirect } from "react-router-dom";
 import { withRouter } from "react-router";
-import { firebase } from "../../firebase";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -31,7 +30,6 @@ export default function ButtonAppBar(props) {
   const { handleHome, openNavBar } = props;
   const classes = useStyles();
   const redirect = () => {
-    firebase.auth().signOut();
     handleHome();
     setAnchorEl(null);
   };

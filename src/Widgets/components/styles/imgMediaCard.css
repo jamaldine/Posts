@@ -1,12 +1,7 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  border-radius: 10px;
-  margin-bottom: 70px;
-  width: 50%;
-  margin-left: 500px;
+  margin-right:auto ;
+  margin-left: auto;
+  max-width: 1000px;
 }
 
 .item {
@@ -17,17 +12,3 @@
   display: flex;
   justify-content: flex-start;
 }
-
-
-
-/*
-
-    display: flex;mettre les elements les uns à coté des autres
-    flex-direction: column;//mettre les elements les uns en dessous des autres
-    flex-wrap: wrap;//mettre les elements suivants à la ligne si la ligne est pleine. nowrap: ne va jamais à la ligne
-    flex-flow: row wrap
-
-    justify-content: end;
-    align-content: flex-end;
-
-*/

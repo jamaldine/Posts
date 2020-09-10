@@ -12,7 +12,7 @@ import { Provider } from "react-redux";
 import reducers from "./reducers";
 
 function App(props) {
-  const [home, setHome] = useState(true);
+  const [home, setHome] = useState(false);
   const handleHome = () => {
     setHome(!home);
   };
@@ -25,7 +25,6 @@ function App(props) {
   return (
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
-        {/**/}
         {!home && (
           <Header
             {...props}
@@ -38,11 +37,11 @@ function App(props) {
         <Switch>
           <Route
             path="/posts"
-            component={() => <Posts home={home} handleHome={handleHome} />}
+            component={() => <Posts home={home}  />}
           />
           <Route
             path="/map"
-            component={() => <Map home={home} handleHome={handleHome} />}
+            component={() => <Map home={home}  />}
           />
           <Route
             path="/statistic"

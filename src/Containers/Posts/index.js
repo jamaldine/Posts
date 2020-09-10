@@ -150,14 +150,13 @@ class Posts extends React.Component {
       tuile_table: true,
     });
   };
-
   render() {
     if (this.props.home) {
       return <Redirect to="/" />;
     }
     return (
       <Post
-      className="container"
+        className="container"
         anchorElPost={this.state.anchorElPost}
         anchorElComment={this.state.anchorElComment}
         handleClickPost={this.handleClickPost}

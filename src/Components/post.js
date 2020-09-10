@@ -1,13 +1,13 @@
 import React, { useState, createContext } from "react";
-// import { Button } from "@material-ui/core";
 import Button from "react-bootstrap/Button";
 import AddPost from "./addPost";
 import CommentsList from "./commentsList";
 import SearchAppBar from "../Widgets/API_components/searchAppBar";
+import FilterSelect from "../Widgets/API_components/filterSelect";
 import Tags from "../Widgets/API_components/tags";
 import BasicButtonGroup from "../Widgets/API_components/basicButtonGroup";
 import Grid from "@material-ui/core/Grid";
-import "./styles/post.css";
+import "./styles/post.scss";
 export const modifyContext = createContext();
 
 const Post = (props) => {
@@ -36,35 +36,20 @@ const Post = (props) => {
     let key = event.target.value;
     searchList(key);
   };
+  const filterItems = ['author', 'title','comment'];
   return (
-    <React.Fragment className="wrapper">
+    <React.Fragment>
       <Grid className="container">
-        <Grid className="box1">
           <SearchAppBar keywords={getKeywords} className="search" />
-        </Grid>
-        <Grid className="box2">
-          <select name="pets" id="pet-select" className="filter">
-            <option value="">--Please choose an author--</option>
-          </select>
-          <select name="pets" id="pet-select" className="filter">
-            <option value="">--Please choose a title--</option>
-          </select>
-          <select name="pets" id="pet-select" className="filter">
-            <option value="">--Please choose a comment--</option>
-          </select>
-        </Grid>
-        <Grid className="box3">
+          {filterItems.map(item=><FilterSelect filter={item} />)}
           <BasicButtonGroup
+            className='button-group'
             setActive={setActive}
-            className="tuile_table"
             {...props}
           />
-        </Grid>
-        <Grid className="box4">
-          <Button variant="danger" onClick={handleClickPost}>
+          <Button className='post-btn' variant="danger" onClick={handleClickPost}>
             + POST
           </Button>
-        </Grid>
       </Grid>
       {anchorElPost ? (
         <modifyContext.Provider value={[modify, setModify]}>
@@ -99,7 +84,7 @@ const Post = (props) => {
         handleHome={handleHome}
         {...props}
       />
-      {/*<Button>load more</Button>*/}
+      <Button>load more</Button>
     </React.Fragment>
   );
 };
