@@ -1,0 +1,21 @@
+.media-card {
+  .wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+    &.item {
+      color: #000;
+      &.content {
+        display: flex;
+        justify-content: flex-start;
+
+        &.author {
+          font-size: 100;
+        }
+        &.readMoreText {
+          background-color: blueviolet;
+        }
+      }
+    }
+  }
+}

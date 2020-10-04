@@ -1,18 +1,9 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import Divider from "@material-ui/core/Divider";
+import ReadMoreAndLess from "react-read-more-less";
 import AddComment from "../../Components/addComment";
-import Avatar from "../../Components/data/baseMedia/post.jpg";
-import "./styles/imgMediaCard.css";
+import "./styles/imgMediaCard.scss";
 import BadgeAvatars from "../API_components/badgeAvatars";
-
+import { LIMIT, READ_LESS, READ_MORE } from "./constants";
 export default function ImgMediaCard(props) {
   const {
     posts,
@@ -24,72 +15,50 @@ export default function ImgMediaCard(props) {
   } = props;
 
   return (
-    <>
+    <div className='media-card'>
       {posts
         ? posts.map((post) =>
             post.visible ? (
-              <Card className="wrapper">
-                <CardActionArea className="item">
-                  <CardContent className='content'>
-                    <Typography>
-                      <BadgeAvatars />
-                    </Typography>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {post.author}
-                    </Typography>
-                  </CardContent>
-                  <Divider />
-                  <CardContent className='content'>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {post.title}
-                    </Typography>
-                  </CardContent>
-                  <CardMedia
-                    component="img"
-                    alt="Contemplative Reptile"
-                    height="540"
-                    width="20px"
-                    image="https://place-hold.it/350x150"
-                    title="Contemplative Reptile"
-                  />{/**/}
-                  <CardContent className='content'>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
+              <div className="wrapper">
+                <div className="item">
+                  <div className="content">
+                    <BadgeAvatars />
+                    <div className="author">{post.author}</div>
+                  </div>
+                  <div className="content">
+                      <ReadMoreAndLess
+                        charLimit={LIMIT}
+                        readMoreText={READ_MORE}
+                        readLessText={READ_LESS}
+                      >
+                        {post.title}
+                      </ReadMoreAndLess>
+                  </div>
+                  <div className="media">
+                    <img src="" alt='img here' />
+                  </div>
+                  <div className="content">
+                    <div className="title">
                       {posts.title}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <Divider />
-                <CardActions className="item">
-                  <Button size="small" color="primary">
-                    Like
-                  </Button>
-                  <Button size="small" color="primary">
-                    Comment
-                  </Button>
-                  <Button size="small" color="primary">
-                  Share
-                  </Button>
-                </CardActions>
-                <Divider />
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <button>Like</button>
+                  <button>Comment</button>
+                  <button>Share</button>
+                </div>
+                <div />
 
-                <CardContent className='content'>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      my comment
-                    </Typography>
-                  </CardContent>
-
-              </Card>
+                <div className="content">
+                  <div className="comment">
+                    my comment
+                  </div>
+                </div>
+              </div>
             ) : null
           )
         : null}
-    </>
+    </div>
   );
 }
